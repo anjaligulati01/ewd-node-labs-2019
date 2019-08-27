@@ -4,7 +4,7 @@
   "description": "node lab 1",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --ignore hackerNews/* --exec babel-node index.js"
   },
   "author": "anjaligulati01",
   "license": "ISC",
@@ -20,6 +20,8 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.15"
+    "express-async-handler": "^1.1.4",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.6.10"
   }
 }
