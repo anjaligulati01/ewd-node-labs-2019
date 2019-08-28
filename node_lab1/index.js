@@ -4,9 +4,7 @@ import contactsRouter from './api/contacts';
 import bodyParser from 'body-parser';
 import postsRouter from './api/posts';
 import './db';
-import loadContacts from './contactsData';
-import {loadPosts} from './postsData';
-import loadUsers from './userData';
+import loadContacts from './seed/contactsData';
 import usersRouter from './api/users';
 import session from 'express-session';
 import authenticate from './authenticate';
@@ -16,6 +14,7 @@ import passport from './auth';
 dotenv.config();
 
 const app = express();
+//export const app = express(); 
 //configure body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -48,8 +47,8 @@ app.listen(port, () => {
   console.info(`Server running at ${port}`);
 });
 
-if (process.env.seedDb) {
+/*if (process.env.seedDb) {
   loadContacts();
   loadPosts();
   loadUsers();
-}
+}*/

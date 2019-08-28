@@ -4,21 +4,32 @@
   "description": "node lab 1",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore hackerNews/* --exec babel-node index.js"
+    "start": "nodemon --ignore hackerNews/* --exec babel-node index.js",
+    "unit-test": "cross-env NODE_ENV=test mocha './api/**/tests/*.js --require babel-core/register --require babel-polyfill --exit"
   },
   "author": "anjaligulati01",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.2.1",
     "eslint-plugin-react": "^7.14.3",
-    "nodemon": "^1.19.1"
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.1.0",
+    "mockgoose": "^8.0.2",
+    "nodemon": "^1.19.1",
+    "should": "^13.2.3",
+    "sinon": "^7.4.1",
+    "sinon-test": "^2.4.0",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
+    "cross-env": "^5.2.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
@@ -27,6 +38,8 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.6.10",
     "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0"
-  }
+    "passport-jwt": "^4.0.0",
+    "save-dev": "^2.0.0"
+  },
+  "test": "cross-env NODE_ENV=test mocha --require babel-core/register --require babel-polyfill --reporter mochawesome"
 }

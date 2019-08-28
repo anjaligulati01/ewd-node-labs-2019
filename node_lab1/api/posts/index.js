@@ -34,9 +34,9 @@ router.post('/:id/upvotes', asyncHandler(async (req, res) => {
 
 // get post
 router.get('/:id', asyncHandler(async (req, res) => {
-    const id = req.params.id;
-    const post = await Post.findById(id);
-    return res.send({post});
+  const id = req.params.id;
+  const post = await Post.findById(id).populate('user');
+  return res.send({post});
 }));
 
 // Add a comment

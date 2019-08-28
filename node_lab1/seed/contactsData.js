@@ -1,4 +1,4 @@
-import contactModel from './api/contacts/contactModel';
+import contactModel from '../api/contacts/contactModel';
 
 const contacts = [{
     'name': 'Contact 1',
