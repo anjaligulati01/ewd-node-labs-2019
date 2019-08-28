@@ -17,6 +17,8 @@ List of user features (excluding user registration and authentication) . . . .
  + commentForm - to allow user to add a comment to a post
  + loginPage - for login
 
+**PLEASE NOTE** Code is in node-lab1 folder under the repo provided. Please ignore contact-related items, e.g. api/contacts etc those were to complete lab work.
+
 ## Installation requirements.
 
 This app is developed using Storybook, and was generated using create-react-app tool. The below will automatically be fetched from package.json because these dependencies have been saved (by just doing npm install)
