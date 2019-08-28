@@ -14,6 +14,7 @@ router.get('/', asyncHandler(async (req, res) => {
 // Add a post
 router.post('/', asyncHandler(async (req, res) => {
     const newPost = req.body;
+    newPost.user = req.user || 'anonymous';
     if (newPost) {
           const post = await Post.create(newPost);
           return res.status(201).send({post});
@@ -47,7 +48,7 @@ router.post('/:id/comments', asyncHandler(async (req, res) => {
     await post.save();
     return res.status(200).send({post});   
 }));
-//not working
+///upvoting a comment
 router.post('/:id/comments/:commentId/upvotes', asyncHandler(async(req, res) =>{
     const id = req.params.id;
     const post = await Post.findById(id);
